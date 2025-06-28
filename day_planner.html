@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Day Planner</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f3efff;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    section {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    label {
+      width: 80px;
+      font-weight: bold;
+      color: #4a4a4a;
+    }
+
+    textarea {
+      padding: 6px;
+      width: 240px;
+      border: 1px solid #d8d4e7;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .savebutton {
+      border: none;
+      background-color: #7e6ac1;
+      color: white;
+      border-radius: 13px;
+      font-size: 14px;
+      padding: 6px 12px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .savebutton:hover {
+      background-color: #a593e0;
+    }
+
+    h2, h3 {
+      color: #4a437f;
+    }
+
+    #welcome-message {
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #4a4a4a;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h2>Day Planner</h2>
+    <h4 id="current-date"></h4>
+
+    <h4 id="welcome-message"></h4>
+    <div>
+      <h3>Today's Schedule</h3>
+       <section>
+  <label for="6am">6:00 AM</label>
+  <textarea id="6am" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('6am')">Save</button>
+</section>
+
+<section>
+  <label for="7am">7:00 AM</label>
+  <textarea id="7am" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('7am')">Save</button>
+</section>
+
+<section>
+  <label for="8am">8:00 AM</label>
+  <textarea id="8am" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('8am')">Save</button>
+</section>
+
+<section>
+  <label for="9am">9:00 AM</label>
+  <textarea id="9am" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('9am')">Save</button>
+</section>
+
+<section>
+  <label for="10am">10:00 AM</label>
+  <textarea id="10am" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('10am')">Save</button>
+</section>
+
+<section>
+  <label for="11am">11:00 AM</label>
+  <textarea id="11am" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('11am')">Save</button>
+</section>
+
+<section>
+  <label for="12pm">12:00 PM</label>
+  <textarea id="12pm" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('12pm')">Save</button>
+</section>
+
+<section>
+  <label for="1pm">1:00 PM</label>
+  <textarea id="1pm" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('1pm')">Save</button>
+</section>
+
+<section>
+  <label for="2pm">2:00 PM</label>
+  <textarea id="2pm" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('2pm')">Save</button>
+</section>
+
+<section>
+  <label for="3pm">3:00 PM</label>
+  <textarea id="3pm" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('3pm')">Save</button>
+</section>
+
+<section>
+  <label for="4pm">4:00 PM</label>
+  <textarea id="4pm" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('4pm')">Save</button>
+</section>
+
+<section>
+  <label for="5pm">5:00 PM</label>
+  <textarea id="5pm" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('5pm')">Save</button>
+</section>
+
+<section>
+  <label for="6pm">6:00 PM</label>
+  <textarea id="6pm" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('6pm')">Save</button>
+</section>
+
+<section>
+  <label for="7pm">7:00 PM</label>
+  <textarea id="7pm" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('7pm')">Save</button>
+</section>
+
+<section>
+  <label for="8pm">8:00 PM</label>
+  <textarea id="8pm" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('8pm')">Save</button>
+</section>
+
+<section>
+  <label for="9pm">9:00 PM</label>
+  <textarea id="9pm" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('9pm')">Save</button>
+</section>
+
+<section>
+  <label for="10pm">10:00 PM</label>
+  <textarea id="10pm" rows="1" placeholder="No tasks scheduled"></textarea>
+  <button class="savebutton" onclick="saveTask('10pm')">Save</button>
+</section>
+  
+    </div>
+  </div>
+
+  <script>
+    function saveTask(id) {
+      const value = document.getElementById(id).value;
+      localStorage.setItem(id, value);
+      alert(`Saved: ${id.toUpperCase()} ➜ "${value}"`);
+    }
+
+    window.onload = () => {
+      const times = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm','9pm','10pm'];
+      times.forEach(id => {
+        const saved = localStorage.getItem(id);
+        if (saved) document.getElementById(id).value = saved;
+      });
+
+      // Set welcome message
+      const email = localStorage.getItem('userEmail');
+      if (email) {
+        const name = email.split('@')[0];
+        document.getElementById('welcome-message').textContent = `Welcome, ${name}!`;
+      }
+    };
+  </script>
+  <script>
+  function saveTask(id) {
+    const value = document.getElementById(id).value;
+    localStorage.setItem(id, value);
+    alert(`Saved: ${id.toUpperCase()} ➜ "${value}"`);
+  }
+
+  window.onload = () => {
+    const times = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm','9pm','10pm'];
+    times.forEach(id => {
+      const saved = localStorage.getItem(id);
+      if (saved) document.getElementById(id).value = saved;
+    });
+
+    // Set welcome message
+    const email = localStorage.getItem('userEmail');
+    if (email) {
+      const name = email.split('@')[0];
+      document.getElementById('welcome-message').textContent = `Welcome, ${name}!`;
+    }
+
+    // Show current date and day
+    const dateElem = document.getElementById('current-date');
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateElem.textContent = now.toLocaleDateString(undefined, options);
+  };
+</script>
+
+</body>
+</html>
