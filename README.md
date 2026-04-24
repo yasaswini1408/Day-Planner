@@ -9,7 +9,7 @@ It allows users to sign in, plan their daily tasks, and save them locally in the
 
 ## 🌐 Live Demo
 
-👉 https://your-live-link-here.com
+👉 https:https://day-planner-nine-xi.vercel.app/
 
 ---
 
